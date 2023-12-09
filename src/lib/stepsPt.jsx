@@ -1,4 +1,6 @@
-export const steps = [
+import WhatsButton from "../components/whattsButton";
+
+export const stepsPt = [
   {
     id: '0',
     message: 'Olá tudo bem? Para que possamos dar início preciso de algumas informações rápidas 🙂',
@@ -56,6 +58,9 @@ export const steps = [
     id: 'telefone',
     user: true,
     trigger: '8',
+    inputAttributes: {
+      name: 'phone',
+    },
     validator: (value) => {
       const phoneRegex = /^\d{11}$/;
       const isValid = phoneRegex.test(value);
@@ -108,13 +113,15 @@ export const steps = [
     options: [
       { value: '1', label: '1 a 9', trigger: 'end-message' },
       { value: '2', label: '10 a 49', trigger: 'end-message' },
-      { value: '3', label: 'end-message0 a 99', trigger: 'end-message' },
+      { value: '3', label: '0 a 99', trigger: 'end-message' },
       { value: '4', label: 'Acima de 100', trigger: 'end-message' },
     ],
   },
   {
     id: 'end-message',
-    message: 'Thanks! Your data was submitted successfully!',
+    component:(
+      <WhatsButton />
+    ) ,
     end: true,
   },
 ]

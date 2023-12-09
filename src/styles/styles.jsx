@@ -4,7 +4,7 @@ export const ChatHeaderContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 6px;
-  background-color: #E2C922;
+  background-color: #FAB700;
 `;
 
 export const ProfileImageContainer = styled.div`
@@ -25,7 +25,7 @@ export const ProfileImageContainer = styled.div`
  export const OnlineIndicator = styled.div`
   width: ${(props) => props.width || '12px'};
   height: ${(props) => props.height || '12px'};
-  background-color: #4caf50;
+  background-color: #14a800;
   border-radius: 50%;
   margin-right: 5px;
   position: absolute;
@@ -39,7 +39,7 @@ export const ProfileImageContainer = styled.div`
 `;
 
 export const OnlineStatus = styled.div`
-  color: #4caf50;
+  color: #14a800;
   font-size: 12px;
 `;
 
