@@ -1,4 +1,4 @@
-import WhatsButton from "../components/whattsButton";
+import WhatsButton from "../components/WhattsButton";
 
 export const stepsPt = [
   {
@@ -113,7 +113,7 @@ export const stepsPt = [
     options: [
       { value: '1', label: '1 a 9', trigger: 'end-message' },
       { value: '2', label: '10 a 49', trigger: 'end-message' },
-      { value: '3', label: '0 a 99', trigger: 'end-message' },
+      { value: '3', label: '50 a 99', trigger: 'end-message' },
       { value: '4', label: 'Acima de 100', trigger: 'end-message' },
     ],
   },
