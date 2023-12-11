@@ -54,7 +54,7 @@ const Chatbot = () => {
       key={language}
       floating={true}
       floatingIcon={<ChatIcon user={user} />}
-      botAvatar='https://avatars.githubusercontent.com/u/108248835?v=4'
+      botAvatar={user.profileImage}
       headerTitle={<ChatHeader user={user} />}
       steps={steps}
       handleEnd={handleEnd}
@@ -66,6 +66,7 @@ const Chatbot = () => {
           : 'Tu respuesta'
       }
       userDelay={0}
+      bubbleOptionStyle={{ fontSize: '16px' }}
     />
   );
 };

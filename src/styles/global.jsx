@@ -23,7 +23,6 @@ export const GlobalStyles = createGlobalStyle`
 
     button{
       cursor: pointer;
-      font-size : 1.4rem;
       border: none;
       background: transparent;
       transition: border-color 0.25s;

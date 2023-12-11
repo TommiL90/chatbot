@@ -1,16 +1,19 @@
+/* eslint-disable react/prop-types */
+import { WhattsContainer, WhattsLink } from "../../styles/styles"
 import { WhatssIcon } from "../Icons"
 
-const WhatsButton = () => {
+const WhatsButton = ({
+  textContainer, textButton, href
+}) => {
   return (
-    <div>
-      <p>
-        ¡Gracias ricardo! Estás siendo dirigido a nuestro equipo para presentarte la mejor solución para tu empresa 🤝
+    <WhattsContainer >
+      <p>{textContainer}
       </p>
-      <button style={{ backgroundColor: "#075E54" }}>
-        <WhatssIcon /><span>Hablar por whattsapp</span>
-      </button>
-
-    </div>
+      <WhattsLink target="_blank"
+        href={href} >
+        <WhatssIcon /><span>{textButton}</span>
+      </WhattsLink>
+    </WhattsContainer>
   )
 }
 
