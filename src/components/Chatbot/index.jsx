@@ -55,7 +55,13 @@ const Chatbot = () => {
       floating={true}
       floatingIcon={<ChatIcon user={user} />}
       botAvatar={user.profileImage}
-      headerTitle={<ChatHeader user={user} />}
+      headerTitle={<ChatHeader user={user} onlineStatus={
+        language === 'en'
+        ? 'Online now'
+        : language === 'pt'
+        ? 'Online agora'
+        : 'Online ahora'
+      } />}
       steps={steps}
       handleEnd={handleEnd}
       placeholder={
@@ -66,7 +72,6 @@ const Chatbot = () => {
           : 'Tu respuesta'
       }
       userDelay={0}
-      bubbleOptionStyle={{ fontSize: '16px' }}
     />
   );
 };

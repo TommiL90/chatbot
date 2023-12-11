@@ -1,7 +1,7 @@
 import { ChatHeaderContainer, OnlineIndicator, OnlineStatus, ProfileImage, ProfileImageContainer, UserName } from "../../styles/styles";
 
 /* eslint-disable react/prop-types */
-export const ChatHeader = ({ user }) => {
+export const ChatHeader = ({ user, onlineStatus }) => {
   const { name, profileImage } = user;
 
   return (
@@ -12,7 +12,7 @@ export const ChatHeader = ({ user }) => {
       </ProfileImageContainer>
       <div>
         <UserName>{name}</UserName>
-        <OnlineStatus>Online agora</OnlineStatus>
+        <OnlineStatus>{onlineStatus}</OnlineStatus>
       </div>
     </ChatHeaderContainer>
   );
