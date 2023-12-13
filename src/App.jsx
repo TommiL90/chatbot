@@ -6,7 +6,7 @@ import Chatbot from './components/Chatbot'
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>s
       <Chatbot />
     </ThemeProvider>
   )
