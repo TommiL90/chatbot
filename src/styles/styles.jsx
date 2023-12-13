@@ -5,6 +5,7 @@ export const ChatHeaderContainer = styled.div`
   align-items: center;
   margin-top: 6px;
   background-color: #FAB700;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 export const ProfileImageContainer = styled.div`

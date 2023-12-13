@@ -61,6 +61,9 @@ const Chatbot = () => {
         ? 'Online agora'
         : 'Online ahora'
       } />}
+      headerSyle={{
+        backgroundColo: "black"
+      }}
       steps={steps}
       handleEnd={handleEnd}
       placeholder={

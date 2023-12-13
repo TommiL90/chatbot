@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     :root{
-      font-family: 'Poppins', sans-serif;
+      //font-family: 'Poppins', sans-serif;
       line-height: 1.5;
       font-weight: 500;
 
