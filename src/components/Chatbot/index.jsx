@@ -8,6 +8,7 @@ import { stepsPt } from '../../lib/stepsPt';
 import { useEffect, useState } from 'react';
 import { stepsEs } from '../../lib/stepsEs';
 import { stepsEn } from '../../lib/stepsEn';
+import { sendEmail } from '../../utils/sendEmail';
 
 
 const Chatbot = () => {
@@ -28,19 +29,17 @@ const Chatbot = () => {
   }
 
   const handleEnd = ({ steps, values }) => {
-    console.log('Formulario completado:', values);
 
     const form = {
       name: values[0],
       email: values[1],
-      message: values[2],
-      telefone: values[3],
-      enterprise: values[4],
-      service_option: values[5],
-      employees_option: values[6]
+      phone: values[2],
+      enterprise: values[3],
+      service_option: values[4],
+      employees_option: values[5],
+      language: language
     }
-
-    console.log(form);
+    sendEmail(form)
   };
 
   useEffect(() => {
