@@ -95,12 +95,12 @@ export const stepsPt = [
   {
     id: 'serviceOptions',
     options: [
-      { value: '1', label: 'Consultoria e Protopipagem', trigger: '13' },
-      { value: '2', label: 'Profissionais de TI', trigger: '13' },
-      { value: '3', label: 'Desenvolvimento Web', trigger: '13' },
-      { value: '4', label: 'Desenvolvimento Mobile', trigger: '13' },
-      { value: '5', label: 'Outsourcing', trigger: '13' },
-      { value: '6', label: 'RPA / Automatizaçao de Procesos', trigger: '13' },
+      { value: 'Consultoria e Protopipagem', label: 'Consultoria e Protopipagem', trigger: '13' },
+      { value: 'Profissionais de TI', label: 'Profissionais de TI', trigger: '13' },
+      { value: 'Desenvolvimento Web', label: 'Desenvolvimento Web', trigger: '13' },
+      { value: 'Desenvolvimento Mobile', label: 'Desenvolvimento Mobile', trigger: '13' },
+      { value: 'Outsourcing', label: 'Outsourcing', trigger: '13' },
+      { value: 'RPA / Automatizaçao de Procesos', label: 'RPA / Automatizaçao de Procesos', trigger: '13' },
     ],
   },
   {
@@ -111,10 +111,10 @@ export const stepsPt = [
   {
     id: 'numberEmployeesOption',
     options: [
-      { value: '1', label: '1 a 9', trigger: 'end-message' },
-      { value: '2', label: '10 a 49', trigger: 'end-message' },
-      { value: '3', label: '50 a 99', trigger: 'end-message' },
-      { value: '4', label: 'Acima de 100', trigger: 'end-message' },
+      { value: '1 a 9', label: '1 a 9', trigger: 'end-message' },
+      { value: '10 a 49', label: '10 a 49', trigger: 'end-message' },
+      { value: '50 a 99', label: '50 a 99', trigger: 'end-message' },
+      { value: 'Acima de 100', label: 'Acima de 100', trigger: 'end-message' },
     ],
   },
   {
