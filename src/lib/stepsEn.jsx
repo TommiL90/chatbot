@@ -49,7 +49,7 @@ export const stepsEn = [
   },
   {
     id: '6',
-    message: 'Could you provide me with your phone number? (I promise not to bother you🙏)',
+    message: 'Could you provide me with your phone number? (I promise not to bother you 🙏)',
     trigger: 'telefone'
   },
   {

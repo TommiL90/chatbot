@@ -51,7 +51,7 @@ export const stepsPt = [
   },
   {
     id: '6',
-    message: 'Poderia me informar seu telefone? (Prometo não incomodar🙏)',
+    message: 'Poderia me informar seu telefone? (Prometo não incomodar 🙏)',
     trigger: 'telefone',
   },
   {

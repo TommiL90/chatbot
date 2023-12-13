@@ -49,7 +49,7 @@ export const stepsEs = [
   },
   {
     id: '6',
-    message: '¿Podrías proporcionarme tu número de teléfono? (Prometo no molestar🙏)',
+    message: '¿Podrías proporcionarme tu número de teléfono? (Prometo no molestar 🙏)',
     trigger: 'telefone'
   },
   {
