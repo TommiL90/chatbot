@@ -6,27 +6,5 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
-
-    :root{
-      //font-family: 'Poppins', sans-serif;
-      line-height: 1.5;
-      font-weight: 500;
-
-      color: #242424;
-
-
-      font-synthesis: none;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    button{
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      transition: border-color 0.25s;
-      border-radius: 4px;
-      };
-    
+ 
 `;

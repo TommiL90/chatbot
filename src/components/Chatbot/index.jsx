@@ -15,10 +15,12 @@ const Chatbot = () => {
 
   const [steps, setSteps] = useState(stepsPt)
   const [language, setLanguage] = useState('pt');
+  const [width, setWidth] = useState(window.innerWidth)
+
+
 
   const getLanguageFromURL = () => {
     const url = window.location.href;
-    console.log(url.includes('/es/'))
     if (url.includes('/es/')) {
       setSteps(() => stepsEs);
       setLanguage(() => 'es');
@@ -44,9 +46,16 @@ const Chatbot = () => {
 
   useEffect(() => {
     getLanguageFromURL();
-    console.log(language);
-  }, [language]);
+    window.addEventListener('resize', e => {
+      setWidth(window.innerWidth)
+    });
 
+    return () => {
+      window.removeEventListener('resize', e => {
+        setWidth(window.innerWidth)
+      });
+    };
+  }, [language]);
 
   return (
     <ChatBot
@@ -54,6 +63,9 @@ const Chatbot = () => {
       floating={true}
       floatingIcon={<ChatIcon user={user} />}
       botAvatar={user.profileImage}
+      avatarStyle={{
+  
+      }}
       headerTitle={<ChatHeader user={user} onlineStatus={
         language === 'en'
         ? 'Online now'
@@ -61,9 +73,6 @@ const Chatbot = () => {
         ? 'Online agora'
         : 'Online ahora'
       } />}
-      headerSyle={{
-        backgroundColo: "black"
-      }}
       steps={steps}
       handleEnd={handleEnd}
       placeholder={
@@ -74,6 +83,10 @@ const Chatbot = () => {
           : 'Tu respuesta'
       }
       userDelay={0}
+      style={{
+        height: (width > 568) ? "515px" : "100vh",
+        'z-index': '99999'
+      }}
     />
   );
 };

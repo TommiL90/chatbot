@@ -1,11 +1,39 @@
 import styled from 'styled-components';
 
+
+export const Container = styled.div`
+
+  line-height: 1.25;
+  font-weight: 500;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  button{
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      transition: border-color 0.25s;
+      border-radius: 4px;
+      };
+
+  img {
+      border-radius: 50% 50% 0 50% !important;
+      width: 45px !important;
+      height: 45px !important;
+    }   
+    
+`;
+
 export const ChatHeaderContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 6px;
   background-color: #FAB700;
   font-family: Arial, Helvetica, sans-serif;
+  z-index: 99999;
 `;
 
 export const ProfileImageContainer = styled.div`
@@ -13,15 +41,17 @@ export const ProfileImageContainer = styled.div`
   inset: 0;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-
 `;
 
 export const ProfileImage = styled.img`
-  width: ${(props) => props.width || '35px'};
-  height: ${(props) => props.height || '35px'};
-  border-radius: 50%;
-  margin-right: 10px;
+  &&{
+    width: ${(props) => props.width || '35px'} !important;
+    height: ${(props) => props.height || '35px'} !important;
+    border-radius: 50% !important;
+    margin-right: 10px !important;
+  } 
 `;
+
 
 export const OnlineIndicator = styled.div`
   width: ${(props) => props.width || '12px'};
