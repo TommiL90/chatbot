@@ -4,7 +4,7 @@ export const sendEmail = (form) => {
     ...form
   }
 
-  emailjs.send('service_1s5rhiu', 'template_34p9inb', templateParams, 's0CBN3UCPCSJNhoV6')
+  emailjs.send('', '', templateParams, '')
   .then((res) => {
     console.log('Email enviado:', res.status, res.text);
   })
