@@ -2,7 +2,7 @@
 import { WhattsContainer, WhattsLink } from "../../styles/styles"
 import { WhatssIcon } from "../Icons"
 
-const WhatsButton = ({
+export const WhattsButton = ({
   textContainer, textButton, href
 }) => {
   return (
@@ -16,5 +16,3 @@ const WhatsButton = ({
     </WhattsContainer>
   )
 }
-
-export default WhatsButton
