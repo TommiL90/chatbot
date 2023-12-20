@@ -4,16 +4,17 @@ import ChatBot from 'react-simple-chatbot';
 import { ChatIcon } from '../ChatIcon';
 import { ChatHeader } from '../ChatHeader';
 import { user } from '../../constants/user';
-import { stepsPt } from '../../lib/stepsPt';
+import { botMessagesPt, stepsPt } from '../../lib/stepsPt';
 import { useEffect, useState } from 'react';
-import { stepsEs } from '../../lib/stepsEs';
-import { stepsEn } from '../../lib/stepsEn';
+import { botMessagesEs, stepsEs } from '../../lib/stepsEs';
+import { botMessagesEn, stepsEn } from '../../lib/stepsEn';
 import { sendEmail } from '../../utils/sendEmail';
 
 
 const Chatbot = () => {
 
   const [steps, setSteps] = useState(stepsPt)
+  const [messagesBot, setMessagesBot] = useState(botMessagesPt)
   const [language, setLanguage] = useState('pt');
   const [width, setWidth] = useState(window.innerWidth)
 
@@ -23,9 +24,11 @@ const Chatbot = () => {
     const url = window.location.href;
     if (url.includes('/es/')) {
       setSteps(() => stepsEs);
+      setMessagesBot(() => botMessagesEs)
       setLanguage(() => 'es');
     } else if (url.includes('/en/')) {
       setSteps(() => stepsEn);
+      setMessagesBot(() => botMessagesEn)
       setLanguage(() => 'en');
     }
   }
@@ -61,7 +64,7 @@ const Chatbot = () => {
     <ChatBot
       key={language}
       floating={true}
-      floatingIcon={<ChatIcon user={user} />}
+      floatingIcon={<ChatIcon user={user} messagesBot={messagesBot} />}
       botAvatar={user.profileImage}
       avatarStyle={{
   
@@ -87,6 +90,7 @@ const Chatbot = () => {
         height: (width > 568) ? "515px" : "100vh",
         'z-index': '99999'
       }}
+      hideUserAvatar={true}
     />
   );
 };

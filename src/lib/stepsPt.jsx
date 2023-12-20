@@ -51,7 +51,7 @@ export const stepsPt = [
   },
   {
     id: '6',
-    message: 'Poderia me informar seu telefone? (Prometo não incomodar 🙏)',
+    message: 'Poderia me informar seu telefone?. Inclua o código do país e utilize apenas dígitos (Prometo não incomodar 🙏)',
     trigger: 'telefone',
   },
   {
@@ -62,7 +62,7 @@ export const stepsPt = [
       name: 'phone',
     },
     validator: (value) => {
-      const phoneRegex = /^\d{11}$/;
+      const phoneRegex = /^\d{1,15}$/;
       const isValid = phoneRegex.test(value);
 
       if (!isValid) {
@@ -123,8 +123,14 @@ export const stepsPt = [
       <WhatsButton 
       textContainer={'Obrigado pela informação! Em breve, um de nossos executivos entrará em contato com você para apresentar a melhor solução para a sua empresa 🤝. Se preferir, também pode iniciar uma conversa clicando abaixo 👇.'} 
       textButton={'Falar por Whattsapp'} 
-      href={`https://api.whatsapp.com/send?phone=+5548991295736&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20site%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}/>
+      href={`https://api.whatsapp.com/send?phone=+19162502674&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20site%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}/>
     ) ,
     end: true,
   },
 ]
+
+
+export const botMessagesPt = [
+  'Quer descobrir a Melhor Solução para sua Empresa? 😄',
+  'Gostaria de conversar com um de nossos especialistas?'
+];

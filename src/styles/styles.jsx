@@ -70,7 +70,7 @@ export const UserName = styled.div`
 `;
 
 export const OnlineStatus = styled.div`
-  color: #14a800;
+  color: #eaedf0;
   font-size: 12px;
 `;
 
@@ -105,5 +105,40 @@ export const WhattsLink = styled.a`
   &:hover {
     background-color: #0d7e66;
     color: #ffffff;
+  }
+`;
+
+
+export const BubbleMessage = styled.div`
+  position: absolute;
+  right: 105%;
+  bottom: 60%;
+  max-width: max-content;
+  width: 280px;
+  border-radius: 26px 26px 0 26px !important;
+  padding: 1rem;
+  color: #242424;
+  background-color: #dbdbdb;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 99999;
+  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.15);
+  transform: scale(1);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+`;
+
+export const LoaderText = styled.div`
+  width: 5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+
+  @keyframes l5 {
+    0%   { box-shadow: 10px 0 #000, -10px 0 #0002; background: #000; }
+    33%  { box-shadow: 10px 0 #000, -10px 0 #0002; background: #0002; }
+    66%  { box-shadow: 10px 0 #0002, -10px 0 #000; background: #0002; }
+    100% { box-shadow: 10px 0 #0002, -10px 0 #000; background: #000; }
   }
 `;

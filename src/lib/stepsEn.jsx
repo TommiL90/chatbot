@@ -49,7 +49,7 @@ export const stepsEn = [
   },
   {
     id: '6',
-    message: 'Could you provide me with your phone number? (I promise not to bother you 🙏)',
+    message: 'Could you provide me with your phone number?.  Include the country code and use only digits (I promise not to bother you 🙏)',
     trigger: 'telefone'
   },
   {
@@ -57,7 +57,7 @@ export const stepsEn = [
     user: true,
     trigger: '8',
     validator: (value) => {
-      const phoneRegex = /^\d{11}$/;
+      const phoneRegex = /^\d{1,15}$/;
       const isValid = phoneRegex.test(value);
 
       if (!isValid) {
@@ -118,9 +118,15 @@ export const stepsEn = [
       <WhatsButton 
       textContainer={'Thank you for the information! Soon, one of our executives will contact you to present the best solution for your company 🤝. If you prefer, you can also start a conversation by clicking below 👇.'} 
       textButton={'Hablar por Whattsapp'} 
-      href={`https://api.whatsapp.com/send?phone=+5548991295736&text=Hello,%20I%20come%20through%20your%20website,%20I%20would%20like%20to%20know%20more%20about%20your%20services
+      href={`https://api.whatsapp.com/send?phone=+19162502674&text=Hello,%20I%20come%20through%20your%20website,%20I%20would%20like%20to%20know%20more%20about%20your%20services
       `} />
     ),
     end: true
   },
+];
+
+
+export const botMessagesEn = [
+  'Want to know how we help companies like yours? 😄',
+  'Do you need help finding the best solution for your business?'
 ];
