@@ -50,7 +50,7 @@ export const stepsEs = [
   },
   {
     id: '6',
-    message: '¿Podrías proporcionarme tu número de teléfono?. Incluya el código de país y solo use dígitos (Prometo no molestar 🙏)',
+    message: '¿Podrías proporcionarme tu número de teléfono? Incluya el código de país y solo use dígitos (Prometo no molestar 🙏).',
     trigger: 'telefone'
   },
   {
@@ -117,9 +117,9 @@ export const stepsEs = [
     id: 'end-message',
     component:(
       <WhattsButton
-      textContainer={'¡Gracias por la información! Pronto, uno de nuestros ejecutivos se pondrá en contacto contigo para presentar la mejor solución para tu empresa 🤝. Si prefieres, también puedes iniciar una conversación haciendo clic abajo 👇.'} 
-      textButton={'Hablar por Whattsapp'} 
-      href={`https://api.whatsapp.com/send?phone=+119162502674&text=Hola,%20vengo%20a%20trav%C3%A9s%20de%20tu%20sitio%20web,%20me%20gustar%C3%ADa%20conocer%20mejor%20tus%20servicios
+      textContainer={'¡Gracias por la información! Pronto, uno de nuestros ejecutivos se pondrá en contacto contigo para presentar la mejor solución para tu empresa 🤝. Si prefieres, también puedes iniciar una conversación haciendo clic abajo. 👇'} 
+      textButton={'Hablar por WhatsApp'} 
+      href={`https://api.whatsapp.com/send?phone=+19162502674&text=Hola,%20vengo%20a%20trav%C3%A9s%20de%20tu%20sitio%20web,%20me%20gustar%C3%ADa%20conocer%20mejor%20tus%20servicios
       `}/>
     ) ,
     end: true

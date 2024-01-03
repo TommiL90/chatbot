@@ -52,7 +52,7 @@ export const stepsPt = [
   },
   {
     id: '6',
-    message: 'Poderia me informar seu telefone?. Inclua o código do país e utilize apenas dígitos (Prometo não incomodar 🙏)',
+    message: 'Poderia me informar seu telefone? Inclua o código do país e utilize apenas dígitos (prometo não incomodar 🙏).',
     trigger: 'telefone',
   },
   {
@@ -75,7 +75,7 @@ export const stepsPt = [
   },
   {
     id: '8',
-    message: 'Legal, estamos quase lá tomas. Para recomendar a melhor solução, preciso conhecer um pouco mais sobre a sua empresa.',
+    message: 'Legal, estamos quase lá. Para recomendar a melhor solução, preciso conhecer um pouco mais sobre a sua empresa.',
     trigger: '9',
   },
   {
@@ -122,9 +122,9 @@ export const stepsPt = [
     id: 'end-message',
     component:(
       <WhattsButton 
-      textContainer={'Obrigado pela informação! Em breve, um de nossos executivos entrará em contato com você para apresentar a melhor solução para a sua empresa 🤝. Se preferir, também pode iniciar uma conversa clicando abaixo 👇.'} 
-      textButton={'Falar por Whattsapp'} 
-      href={`https://api.whatsapp.com/send?phone=+119162502674&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20site%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}/>
+      textContainer={'Obrigado pela informação! Em breve, um de nossos executivos entrará em contato com você para apresentar a melhor solução para a sua empresa 🤝. Se preferir, também pode iniciar uma conversa clicando abaixo. 👇'} 
+      textButton={'Falar por WhatsApp'} 
+      href={`https://api.whatsapp.com/send?phone=+19162502674&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20site%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}/>
     ) ,
     end: true,
   },

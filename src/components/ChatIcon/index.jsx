@@ -21,11 +21,22 @@ export const ChatIcon = ({ user, messagesBot }) => {
   };
 
   useEffect(() => {
+
+    const initialMessageTimeout = setTimeout(() => {
+      setLoader(false);
+      setShowBubbleMessage(true);
+    }, 4000);
+    
     const interval = setInterval(() => {
       selectNewMessage(selectedIndex, messagesBot)
-    }, 8000)
-    return () => clearInterval(interval)
+    }, 20000)
+
+    return () => {
+      clearTimeout(initialMessageTimeout)
+      clearInterval(interval)
+    }
   })
+
   return (
     <ProfileImageContainer
       width='100%'

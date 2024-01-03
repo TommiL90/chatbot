@@ -1,4 +1,4 @@
-import { ChatHeaderContainer, OnlineIndicator, OnlineStatus, ProfileImage, ProfileImageContainer, UserName } from "../../styles/styles";
+import { ChatHeaderContainer, OnlineIndicator, OnlineStatus, ProfileImage, ProfileImageContainer, UserName, UserNameContainer } from "../../styles/styles";
 
 /* eslint-disable react/prop-types */
 export const ChatHeader = ({ user, onlineStatus }) => {
@@ -6,14 +6,17 @@ export const ChatHeader = ({ user, onlineStatus }) => {
 
   return (
     <ChatHeaderContainer>
-      <ProfileImageContainer>
+      <ProfileImageContainer
+      width='35px'
+      height='35px'
+      >
         <ProfileImage src={profileImage} alt={`${name}'s Profile`} />
         <OnlineIndicator />
       </ProfileImageContainer>
-      <div>
+      <UserNameContainer>
         <UserName>{name}</UserName>
         <OnlineStatus>{onlineStatus}</OnlineStatus>
-      </div>
+      </UserNameContainer>
     </ChatHeaderContainer>
   );
 };

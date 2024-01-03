@@ -50,7 +50,7 @@ export const stepsEn = [
   },
   {
     id: '6',
-    message: 'Could you provide me with your phone number?.  Include the country code and use only digits (I promise not to bother you 🙏)',
+    message: 'Could you provide me with your phone number?  Include the country code and use only digits (I promise not to bother you 🙏).',
     trigger: 'telefone'
   },
   {
@@ -117,9 +117,9 @@ export const stepsEn = [
     id: 'end-message',
     component: (
       <WhattsButton 
-      textContainer={'Thank you for the information! Soon, one of our executives will contact you to present the best solution for your company 🤝. If you prefer, you can also start a conversation by clicking below 👇.'} 
-      textButton={'Hablar por Whattsapp'} 
-      href={`https://api.whatsapp.com/send?phone=+119162502674&text=Hello,%20I%20come%20through%20your%20website,%20I%20would%20like%20to%20know%20more%20about%20your%20services
+      textContainer={'Thank you for the information! Soon, one of our executives will contact you to present the best solution for your company. 🤝 If you prefer, you can also start a conversation by clicking below. 👇'} 
+      textButton={'Talk on WhatsApp'} 
+      href={`https://api.whatsapp.com/send?phone=+19162502674&text=Hello,%20I%20come%20through%20your%20website,%20I%20would%20like%20to%20know%20more%20about%20your%20services
       `} />
     ),
     end: true

@@ -3,13 +3,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
-  line-height: 1.25;
+  line-height: 1.5;
   font-weight: 500;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  h2{
+    line-height: 1.5;
+  }
 
   button{
       cursor: pointer;
@@ -39,7 +43,7 @@ export const ChatHeaderContainer = styled.div`
 export const ProfileImageContainer = styled.div`
   position: relative;
   inset: 0;
-  width: ${(props) => props.width};
+  width: ${(props) => props.width };
   height: ${(props) => props.height};
 `;
 
@@ -60,13 +64,22 @@ export const OnlineIndicator = styled.div`
   border-radius: 50%;
   margin-right: 5px;
   position: absolute;
-  right: ${(props) => props.right || '4px'};
-  bottom: ${(props) => props.bottom || '6px'};
+  right: ${(props) => props.right || '-5px'};
+  bottom: ${(props) => props.bottom || '0'};
   z-index: 99;
+`;
+
+export const UserNameContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 4px;
 `;
 
 export const UserName = styled.div`
   font-weight: bold;
+  color:  #eaedf0;
 `;
 
 export const OnlineStatus = styled.div`
