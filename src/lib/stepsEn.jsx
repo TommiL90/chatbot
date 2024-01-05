@@ -1,11 +1,14 @@
+import { CustomStep } from "../components/CustomStep";
 import { WhattsButton } from "../components/WhattsButton";
 
 
-export const stepsEn = [
+export const stepsEn  = (setWatcher, setFormData) => [
   {
     id: '0',
-    message: 'Hello, how are you? To get started, I need some quick information 🙂',
-    trigger: '1',
+    component: <CustomStep 
+    legend={'Hello, everything okay? So we can start, I need some <strong>quick</strong> information 🙂'}
+    textButton={'Yes, I want more information ➡️'}
+    />,
     delay: 3000
   },
   {
@@ -22,6 +25,12 @@ export const stepsEn = [
       if (value.trim() === '') {
         return 'Please enter your full name.';
       }
+
+      setFormData((prevData) => ({
+        ...prevData,
+        name: value,
+      }));
+
       return true;
     }
   },
@@ -45,6 +54,13 @@ export const stepsEn = [
       if (!isValid) {
         return 'Please enter a valid email.';
       }
+
+      setWatcher(true)
+      setFormData((prevData) => ({
+        ...prevData,
+        email: value,
+      }));
+
       return true;
     }
   },
@@ -64,6 +80,11 @@ export const stepsEn = [
       if (!isValid) {
         return 'Please enter a valid phone number.';
       }
+
+      setFormData((prevData) => ({
+        ...prevData,
+        phone: value,
+      }));
 
       return true;
     }

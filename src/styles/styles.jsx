@@ -15,13 +15,6 @@ export const Container = styled.div`
     line-height: 1.5;
   }
 
-  button{
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      transition: border-color 0.25s;
-      border-radius: 4px;
-      };
 
   img {
       border-radius: 50% 50% 0 50% !important;
@@ -153,5 +146,29 @@ export const LoaderText = styled.div`
     33%  { box-shadow: 10px 0 #000, -10px 0 #0002; background: #0002; }
     66%  { box-shadow: 10px 0 #0002, -10px 0 #000; background: #0002; }
     100% { box-shadow: 10px 0 #0002, -10px 0 #000; background: #000; }
+  }
+`;
+
+
+export const CustomStepButton = styled.button`
+  width: 100%;
+  height: 4rem;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #242424;
+  gap: 8px;
+  background-color: #fab700;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+  border: none;
+  border-radius: 6px;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #ffbf10;
   }
 `;

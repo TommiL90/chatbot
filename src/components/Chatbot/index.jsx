@@ -13,21 +13,26 @@ import { sendEmail } from '../../utils/sendEmail';
 
 const Chatbot = () => {
 
-  const [steps, setSteps] = useState(stepsPt)
+  const [watcher, setWatcher] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+  const [steps, setSteps] = useState(stepsPt(setWatcher, setFormData))
   const [messagesBot, setMessagesBot] = useState(botMessagesPt)
   const [language, setLanguage] = useState('pt');
   const [width, setWidth] = useState(window.innerWidth)
 
 
-
   const getLanguageFromURL = () => {
     const url = window.location.href;
     if (url.includes('/es/')) {
-      setSteps(() => stepsEs);
+      setSteps(() => stepsEs(setWatcher, setFormData));
       setMessagesBot(() => botMessagesEs)
       setLanguage(() => 'es');
     } else if (url.includes('/en/')) {
-      setSteps(() => stepsEn);
+      setSteps(() => stepsEn(setWatcher, setFormData));
       setMessagesBot(() => botMessagesEn)
       setLanguage(() => 'en');
     }
@@ -44,21 +49,38 @@ const Chatbot = () => {
       employees_option: values[5],
       language: language
     }
+
     sendEmail(form)
+    setWatcher(false)
   };
 
   useEffect(() => {
     getLanguageFromURL();
-    window.addEventListener('resize', e => {
-      setWidth(window.innerWidth)
-    });
+
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    const handleBeforeUnload = (event) => {
+      sendEmail({...formData, language: language})
+      const message = 'Hey! Are you sure you don\'t want to answer Thomas\' questions to receive the best advice?';
+      event.returnValue = message; 
+      return message; 
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    if (watcher) {
+      window.addEventListener('beforeunload', handleBeforeUnload);
+    }
 
     return () => {
-      window.removeEventListener('resize', e => {
-        setWidth(window.innerWidth)
-      });
+      window.removeEventListener('resize', handleResize);
+
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+
     };
-  }, [language]);
+  }, [language, watcher, formData]);
 
   return (
     <ChatBot
@@ -67,14 +89,14 @@ const Chatbot = () => {
       floatingIcon={<ChatIcon user={user} messagesBot={messagesBot} />}
       botAvatar={user.profileImage}
       avatarStyle={{
-  
+
       }}
       headerTitle={<ChatHeader user={user} onlineStatus={
         language === 'en'
-        ? 'Online now'
-        : language === 'pt'
-        ? 'Online agora'
-        : 'Online ahora'
+          ? 'Online now'
+          : language === 'pt'
+            ? 'Online agora'
+            : 'Online ahora'
       } />}
       steps={steps}
       handleEnd={handleEnd}
@@ -82,13 +104,13 @@ const Chatbot = () => {
         language === 'en'
           ? 'Type the message'
           : language === 'pt'
-          ? 'Digite mensagem'
-          : 'Tu respuesta'
+            ? 'Digite mensagem'
+            : 'Tu respuesta'
       }
       userDelay={0}
       style={{
         height: (width > 568) ? "515px" : "100vh",
-        'z-index': '99999'
+        'zIndex': '99999'
       }}
       hideUserAvatar={true}
     />
